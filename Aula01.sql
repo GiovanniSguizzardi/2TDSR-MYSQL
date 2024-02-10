@@ -1,0 +1,28 @@
+BEGIN
+
+    FOR X IN (SELECT TABLE_NAME FROM USER_TABLES) LOOP
+    EXECUTE IMMEDIATE 'DROP TABLE '||X.TABLE_NAME ||' CASCADE CONSTRAINTS';
+    
+END LOOP;
+END;
+
+CREATE TABLE PAIS(
+    nome_pais VARCHAR2(255)
+);
+    
+CREATE TABLE ESTADO(
+    nome_estado VARCHAR2(255)
+);
+    
+CREATE TABLE CIDADE(
+    nome_cidade VARCHAR(255)
+);
+    
+CREATE TABLE BAIRRO(
+    nome_bairro VARCHAR2(255)
+);
+    
+CREATE TABLE ENDERECO(
+    nome_endereco VARCHAR2(255),
+    numero_endereco NUMERIC(38)
+);
